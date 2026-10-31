@@ -21,10 +21,15 @@ Find secrets on this VM, report them without exposing their values, and replace 
 ## Remote scan (exe.dev MCP)
 
 1. List VMs (`list_vms`, or `exec` with `ls --json`) and ask the user which to scan. Use only names the tool returned.
-2. Read `bootstrap.txt` in this skill. It is one shell command that unpacks the scan scripts into `~/.secret-scan-skill` on the VM and runs a scan. Append flags at the end if needed (`--verify`, `--no-git`, paths).
+2. Use this command. It downloads this skill's pinned release from GitHub into `~/.secret-scan-skill` on the VM and runs a scan. Append flags at the end if needed (`--verify`, `--no-git`, paths).
+
+    ```bash
+    mkdir -p ~/.secret-scan-skill && curl -fsSL https://github.com/HLD/exechecker/archive/refs/tags/v0.1.0.tar.gz | tar -xzf - --strip-components=1 -C ~/.secret-scan-skill && ~/.secret-scan-skill/scripts/scan.sh
+    ```
+
 3. Send it to each chosen VM:
-    - `run_vm_command`: pass the contents of `bootstrap.txt` as the command, for that VM.
-    - `exec`: pass `ssh <vm> '<contents of bootstrap.txt>'`. It contains no single quotes, so the outer quotes keep the lobby from splitting it.
+    - `run_vm_command`: pass the command as is, for that VM.
+    - `exec`: pass `ssh <vm> '<command>'`. It contains no single quotes, so the outer quotes keep the lobby from splitting it.
 4. `exec` returns after `wait_seconds` (max 45) and leaves longer commands running as a job; follow it with `wait`. Later scans on the same VM can run `~/.secret-scan-skill/scripts/scan.sh` directly.
 
 Only the redacted table comes back over MCP; raw values stay on the VM.
