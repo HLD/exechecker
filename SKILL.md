@@ -1,11 +1,18 @@
 ---
 name: secret-scan
 description: Scan this exe.dev VM for leaked secrets and credentials (API keys, tokens, private keys, webhooks) with TruffleHog, then help move each one into an exe.dev integration so it no longer lives on disk. Use when the user asks to scan for secrets, audit credentials, check for leaked keys, or clean up API keys on their VM.
+license: MIT
+compatibility: exe.dev VMs (Linux, amd64 or arm64) with curl and python3
+metadata:
+  version: "0.3.0"
+when: exe.dev
 ---
 
 # Secret scan
 
 Find secrets on this VM, report them without exposing their values, and replace each one with an exe.dev integration. Integrations keep credentials outside the VM: the VM can use them but never read them.
+
+All paths below (`scripts/...`, `references/...`) are relative to the folder that holds this file. Run commands from that folder, or prefix the folder's path.
 
 ## Rules
 
@@ -13,26 +20,15 @@ Find secrets on this VM, report them without exposing their values, and replace 
 - **Verification is opt-in.** `--verify` sends each secret to its provider's API to check if it is live. Ask the user before using it.
 - Do not delete or edit files that hold secrets until the replacement is working and the user has approved the change.
 
-## Where you are running
+## Scanning another VM
 
-- **On the VM** (you have a shell there): run `scripts/scan.sh` directly, as in step 1.
-- **Remotely, through the exe.dev MCP server** (you have `run_vm_command` from the exe.dev plugin, or `exec` from `https://exe.dev/mcp`): the scripts are not on the VM. Follow "Remote scan" below instead of step 1, then continue at step 2.
+If the VM to scan is not the one you are running on, install this skill there first; do not run code from the repository's default branch. Any way of running a shell command on that VM works: plain `ssh`, the exe.dev MCP server's `exec` tool, the exe.dev plugin's `run_vm_command`, or similar.
 
-## Remote scan (exe.dev MCP)
+1. Ask the user which VM to scan. If a tool can list their VMs, offer names from it.
+2. Install the same version you are running, verified by checksum: run `scripts/install-command.sh` here. It prints one command; run that on the target VM. It downloads the matching release, refuses to install unless the files match this copy's checksum, and skips the download if that version is already installed. It contains no single quotes, so it can be wrapped as `ssh <vm> '<command>'`. If you cannot run scripts here, use the install command published with the release on GitHub (see the README).
+3. Run `~/.agents/skills/secret-scan/scripts/scan.sh` on that VM, with any flags from step 1 below. A scan can take a few minutes; if your tool returns early and leaves the command running as a job, wait for it to finish.
 
-1. List VMs (`list_vms`, or `exec` with `ls --json`) and ask the user which to scan. Use only names the tool returned.
-2. Use this command. It downloads this skill's pinned release from GitHub into `~/.secret-scan-skill` on the VM and runs a scan. Append flags at the end if needed (`--verify`, `--no-git`, paths).
-
-    ```bash
-    mkdir -p ~/.secret-scan-skill && curl -fsSL https://github.com/HLD/exechecker/archive/refs/tags/v0.2.0.tar.gz | tar -xzf - --strip-components=1 -C ~/.secret-scan-skill && ~/.secret-scan-skill/scripts/scan.sh
-    ```
-
-3. Send it to each chosen VM:
-    - `run_vm_command`: pass the command as is, for that VM.
-    - `exec`: pass `ssh <vm> '<command>'`. It contains no single quotes, so the outer quotes keep the lobby from splitting it.
-4. `exec` returns after `wait_seconds` (max 45) and leaves longer commands running as a job; follow it with `wait`. Later scans on the same VM can run `~/.secret-scan-skill/scripts/scan.sh` directly.
-
-Only the redacted table comes back over MCP; raw values stay on the VM.
+Only the redacted table comes back; raw values stay on the VM. Continue at step 2.
 
 ## 1. Scan
 
