@@ -24,3 +24,7 @@ The redacted JSON report goes to `~/.cache/secret-scan/report-<timestamp>.json` 
 ## Updating
 
 After changing anything in `scripts/`, run `scripts/build-bootstrap.sh` to regenerate `bootstrap.txt`. To move to a new TruffleHog release, update `VERSION` and both checksums in `scripts/install.sh`.
+
+## License
+
+MIT. See `LICENSE`.
