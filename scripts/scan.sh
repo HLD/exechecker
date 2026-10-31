@@ -41,6 +41,19 @@ chmod 700 "$OUT_DIR"
 VERIFY_ARGS=(--no-verification)
 [[ $VERIFY -eq 1 ]] && VERIFY_ARGS=()
 
+# Ask the Reflection integration for this VM's name and attached integrations,
+# so the report can flag findings an integration already covers. Optional: a
+# VM without Reflection attached just gets a report without that column filled.
+REFLECTION="https://reflection.int.exe.xyz"
+ATTACHED="$OUT_DIR/attached.json"
+ATTACHED_ARGS=()
+if curl -fsS -m 5 "$REFLECTION/integrations" -o "$ATTACHED" 2>/dev/null; then
+  chmod 600 "$ATTACHED"
+  ATTACHED_ARGS=(--attached "$ATTACHED")
+fi
+VM_NAME="$(curl -fsS -m 5 "$REFLECTION/" 2>/dev/null \
+  | python3 -I -c 'import json,sys; print(json.load(sys.stdin).get("name",""))' 2>/dev/null || true)"
+
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 REPORT="$OUT_DIR/report-$STAMP.json"
 
@@ -61,7 +74,8 @@ REPORT="$OUT_DIR/report-$STAMP.json"
                -type d -name .git -print 2>/dev/null)
   fi
 } | python3 -I "$SCRIPT_DIR/report.py" --verified-checked "$VERIFY" \
-    --key-file "$OUT_DIR/fingerprint.key" --out "$REPORT"
+    --key-file "$OUT_DIR/fingerprint.key" --out "$REPORT" \
+    --vm "$VM_NAME" "${ATTACHED_ARGS[@]}"
 
 chmod 600 "$REPORT"
 echo >&2

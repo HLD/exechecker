@@ -1,0 +1,502 @@
+{
+ "airtablemetadataapikey": {
+  "handle": "airtable",
+  "name": "Airtable"
+ },
+ "airtableoauth": {
+  "handle": "airtable",
+  "name": "Airtable"
+ },
+ "airtablepersonalaccesstoken": {
+  "handle": "airtable",
+  "name": "Airtable"
+ },
+ "algoliaadminkey": {
+  "handle": "algolia",
+  "name": "Algolia"
+ },
+ "alphavantage": {
+  "handle": "alphavantage",
+  "name": "Alpha Vantage (market data)"
+ },
+ "amplitudeapikey": {
+  "handle": "amplitude",
+  "name": "Amplitude"
+ },
+ "anthropic": {
+  "handle": "anthropic",
+  "name": "Anthropic"
+ },
+ "asanaoauth": {
+  "handle": "asana",
+  "name": "Asana"
+ },
+ "asanapersonalaccesstoken": {
+  "handle": "asana",
+  "name": "Asana"
+ },
+ "assemblyai": {
+  "handle": "assemblyai",
+  "name": "AssemblyAI"
+ },
+ "betterstack": {
+  "handle": "betterstack",
+  "name": "Better Stack"
+ },
+ "bitbucketapppassword": {
+  "handle": "bitbucket",
+  "name": "Bitbucket Cloud"
+ },
+ "buildkite": {
+  "handle": "buildkite",
+  "name": "Buildkite"
+ },
+ "calendlyapikey": {
+  "handle": "calendly",
+  "name": "Calendly"
+ },
+ "circleci": {
+  "handle": "circleci",
+  "name": "CircleCI"
+ },
+ "clickuppersonaltoken": {
+  "handle": "clickup",
+  "name": "ClickUp"
+ },
+ "cloudflareapitoken": {
+  "handle": "cloudflare",
+  "name": "Cloudflare"
+ },
+ "cloudflareglobalapikey": {
+  "handle": "cloudflare",
+  "name": "Cloudflare"
+ },
+ "coingecko": {
+  "handle": "coingecko",
+  "name": "CoinGecko"
+ },
+ "datadogapikey": {
+  "handle": "datadog",
+  "name": "Datadog"
+ },
+ "datadogtoken": {
+  "handle": "datadog",
+  "name": "Datadog"
+ },
+ "deepgram": {
+  "handle": "deepgram",
+  "name": "Deepgram"
+ },
+ "deepseek": {
+  "handle": "deepseek",
+  "name": "DeepSeek"
+ },
+ "digitaloceantoken": {
+  "handle": "digitalocean",
+  "name": "DigitalOcean"
+ },
+ "digitaloceanv2": {
+  "handle": "digitalocean",
+  "name": "DigitalOcean"
+ },
+ "dockerhub": {
+  "handle": "dockerhub",
+  "name": "Docker Hub"
+ },
+ "doppler": {
+  "handle": "doppler",
+  "name": "Doppler"
+ },
+ "dynatrace": {
+  "handle": "dynatrace",
+  "name": "Dynatrace"
+ },
+ "elevenlabs": {
+  "handle": "elevenlabs",
+  "name": "ElevenLabs"
+ },
+ "etherscan": {
+  "handle": "etherscan",
+  "name": "Etherscan"
+ },
+ "fastlypersonaltoken": {
+  "handle": "fastly",
+  "name": "Fastly"
+ },
+ "figmapersonalaccesstoken": {
+  "handle": "figma",
+  "name": "Figma"
+ },
+ "finnhub": {
+  "handle": "finnhub",
+  "name": "Finnhub"
+ },
+ "flyio": {
+  "handle": "flyio",
+  "name": "Fly.io"
+ },
+ "freshdesk": {
+  "handle": "freshdesk",
+  "name": "Freshdesk"
+ },
+ "front": {
+  "handle": "front",
+  "name": "Front"
+ },
+ "gemini": {
+  "handle": "gemini",
+  "name": "Google Gemini"
+ },
+ "gitlab": {
+  "handle": "gitlab",
+  "name": "GitLab"
+ },
+ "gitlaboauth2": {
+  "handle": "gitlab",
+  "name": "GitLab"
+ },
+ "googlegeminiapikey": {
+  "handle": "gemini",
+  "name": "Google Gemini"
+ },
+ "grafana": {
+  "handle": "grafana",
+  "name": "Grafana"
+ },
+ "grafanaserviceaccount": {
+  "handle": "grafana",
+  "name": "Grafana"
+ },
+ "groq": {
+  "handle": "groq",
+  "name": "Groq"
+ },
+ "hashicorpvaultauth": {
+  "handle": "hashicorpvault",
+  "name": "HashiCorp Vault"
+ },
+ "hashicorpvaultbatchtoken": {
+  "handle": "hashicorpvault",
+  "name": "HashiCorp Vault"
+ },
+ "hashicorpvaulttoken": {
+  "handle": "hashicorpvault",
+  "name": "HashiCorp Vault"
+ },
+ "heroku": {
+  "handle": "heroku",
+  "name": "Heroku"
+ },
+ "honeycomb": {
+  "handle": "honeycomb",
+  "name": "Honeycomb"
+ },
+ "hubspot": {
+  "handle": "hubspot",
+  "name": "HubSpot"
+ },
+ "hubspotapikey": {
+  "handle": "hubspot",
+  "name": "HubSpot"
+ },
+ "hubspotoauth": {
+  "handle": "hubspot",
+  "name": "HubSpot"
+ },
+ "huggingface": {
+  "handle": "huggingface",
+  "name": "Hugging Face"
+ },
+ "intercom": {
+  "handle": "intercom",
+  "name": "Intercom"
+ },
+ "jiratoken": {
+  "handle": "jira",
+  "name": "Jira Cloud"
+ },
+ "launchdarkly": {
+  "handle": "launchdarkly",
+  "name": "LaunchDarkly"
+ },
+ "lemonsqueezy": {
+  "handle": "lemonsqueezy",
+  "name": "Lemon Squeezy"
+ },
+ "linearapi": {
+  "handle": "linear",
+  "name": "Linear"
+ },
+ "linode": {
+  "handle": "linode",
+  "name": "Linode (Akamai)"
+ },
+ "mailgun": {
+  "handle": "mailgun",
+  "name": "Mailgun"
+ },
+ "mattermostpersonaltoken": {
+  "handle": "mattermost",
+  "name": "Mattermost"
+ },
+ "mixpanel": {
+  "handle": "mixpanel",
+  "name": "Mixpanel"
+ },
+ "monday": {
+  "handle": "monday",
+  "name": "monday.com"
+ },
+ "netlify": {
+  "handle": "netlify",
+  "name": "Netlify"
+ },
+ "newrelicinsightsinsertkey": {
+  "handle": "newrelic",
+  "name": "New Relic"
+ },
+ "newrelicinsightsquerykey": {
+  "handle": "newrelic",
+  "name": "New Relic"
+ },
+ "newreliclicensekey": {
+  "handle": "newrelic",
+  "name": "New Relic"
+ },
+ "newrelicpersonalapikey": {
+  "handle": "newrelic",
+  "name": "New Relic"
+ },
+ "newrelicuserkey": {
+  "handle": "newrelic",
+  "name": "New Relic"
+ },
+ "newsapi": {
+  "handle": "newsapi",
+  "name": "NewsAPI.org"
+ },
+ "notion": {
+  "handle": "notion",
+  "name": "Notion"
+ },
+ "npmtoken": {
+  "handle": "npm",
+  "name": "npm registry"
+ },
+ "okta": {
+  "handle": "okta",
+  "name": "Okta"
+ },
+ "onesignal": {
+  "handle": "onesignal",
+  "name": "OneSignal"
+ },
+ "openai": {
+  "handle": "openai",
+  "name": "OpenAI"
+ },
+ "openaiadmin": {
+  "handle": "openai",
+  "name": "OpenAI"
+ },
+ "openrouter": {
+  "handle": "openrouter",
+  "name": "OpenRouter"
+ },
+ "openweather": {
+  "handle": "openweather",
+  "name": "OpenWeather"
+ },
+ "opsgenie": {
+  "handle": "opsgenie",
+  "name": "Opsgenie"
+ },
+ "paddle": {
+  "handle": "paddle",
+  "name": "Paddle"
+ },
+ "pagerdutyapikey": {
+  "handle": "pagerduty",
+  "name": "PagerDuty"
+ },
+ "pinecone": {
+  "handle": "pinecone",
+  "name": "Pinecone"
+ },
+ "pipedrive": {
+  "handle": "pipedrive",
+  "name": "Pipedrive"
+ },
+ "planetscale": {
+  "handle": "planetscale",
+  "name": "PlanetScale"
+ },
+ "polygon": {
+  "handle": "polygon",
+  "name": "Polygon.io"
+ },
+ "posthogapp": {
+  "handle": "posthog",
+  "name": "PostHog"
+ },
+ "postmark": {
+  "handle": "postmark",
+  "name": "Postmark"
+ },
+ "pypi": {
+  "handle": "pypi",
+  "name": "PyPI (upload)"
+ },
+ "railwayapp": {
+  "handle": "railway",
+  "name": "Railway"
+ },
+ "replicate": {
+  "handle": "replicate",
+  "name": "Replicate"
+ },
+ "resend": {
+  "handle": "resend",
+  "name": "Resend"
+ },
+ "scalewaykey": {
+  "handle": "scaleway",
+  "name": "Scaleway"
+ },
+ "sendgrid": {
+  "handle": "sendgrid",
+  "name": "SendGrid"
+ },
+ "sentryorgtoken": {
+  "handle": "sentry",
+  "name": "Sentry"
+ },
+ "sentrytoken": {
+  "handle": "sentry",
+  "name": "Sentry"
+ },
+ "shippo": {
+  "handle": "shippo",
+  "name": "Shippo"
+ },
+ "shodankey": {
+  "handle": "shodan",
+  "name": "Shodan"
+ },
+ "shopify": {
+  "handle": "shopify",
+  "name": "Shopify (Admin API)"
+ },
+ "shopifyoauth": {
+  "handle": "shopify",
+  "name": "Shopify (Admin API)"
+ },
+ "shortcut": {
+  "handle": "shortcut",
+  "name": "Shortcut"
+ },
+ "snowflake": {
+  "handle": "snowflake",
+  "name": "Snowflake"
+ },
+ "snykkey": {
+  "handle": "snyk",
+  "name": "Snyk"
+ },
+ "square": {
+  "handle": "square",
+  "name": "Square"
+ },
+ "squareapp": {
+  "handle": "square",
+  "name": "Square"
+ },
+ "stripe": {
+  "handle": "stripe",
+  "name": "Stripe"
+ },
+ "stripepaymentintent": {
+  "handle": "stripe",
+  "name": "Stripe"
+ },
+ "supabasetoken": {
+  "handle": "supabase",
+  "name": "Supabase"
+ },
+ "tailscale": {
+  "handle": "tailscale",
+  "name": "Tailscale"
+ },
+ "telegrambottoken": {
+  "handle": "telegram",
+  "name": "Telegram Bot API"
+ },
+ "telnyx": {
+  "handle": "telnyx",
+  "name": "Telnyx"
+ },
+ "todoist": {
+  "handle": "todoist",
+  "name": "Todoist"
+ },
+ "trelloapikey": {
+  "handle": "trello",
+  "name": "Trello"
+ },
+ "twilio": {
+  "handle": "twilio",
+  "name": "Twilio"
+ },
+ "twilioapikey": {
+  "handle": "twilio",
+  "name": "Twilio"
+ },
+ "twitch": {
+  "handle": "twitch",
+  "name": "Twitch"
+ },
+ "twitchaccesstoken": {
+  "handle": "twitch",
+  "name": "Twitch"
+ },
+ "uptimerobot": {
+  "handle": "uptimerobot",
+  "name": "UptimeRobot"
+ },
+ "urlscan": {
+  "handle": "urlscan",
+  "name": "urlscan.io"
+ },
+ "vercel": {
+  "handle": "vercel",
+  "name": "Vercel"
+ },
+ "virustotal": {
+  "handle": "virustotal",
+  "name": "VirusTotal"
+ },
+ "vultrapikey": {
+  "handle": "vultr",
+  "name": "Vultr"
+ },
+ "webflow": {
+  "handle": "webflow",
+  "name": "Webflow"
+ },
+ "xai": {
+  "handle": "xai",
+  "name": "xAI (Grok)"
+ },
+ "youtubeapikey": {
+  "handle": "youtube",
+  "name": "YouTube Data API (read)"
+ },
+ "zendeskapi": {
+  "handle": "zendesk",
+  "name": "Zendesk"
+ },
+ "zulipchat": {
+  "handle": "zulip",
+  "name": "Zulip"
+ }
+}
